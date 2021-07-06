@@ -5,6 +5,7 @@ import { scale } from "../utils/typography"
 
 import Footer from "./footer"
 import "./global.css"
+import "./navbar.css"
 
 const Layout = ({ location, title, children }) => {
   const toggle = (
@@ -65,9 +66,11 @@ const Layout = ({ location, title, children }) => {
           marginBottom: 0,
           marginTop: 0,
           fontFamily: `Montserrat, sans-serif`,
+          marginBottom: "30px"
         }}
       >
           <Link
+            // className="navElement"
             style={{
               boxShadow: `none`,
               color: `inherit`,
@@ -78,35 +81,53 @@ const Layout = ({ location, title, children }) => {
           </Link>
         </h2>
 
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          Top Threes
-        </Link>
+        <nav>
+          <ul>
+            <li>
+              <Link
+                className="navElement"
+                style={{
+                  boxShadow: `none`,
+                  color: `inherit`,
+                }}
+                to={`/top-threes`}
+              >
+                Top Threes
+              </Link>
+            </li>
+            <li>
+            <Link
+                className="navElement"
+                style={{
+                  boxShadow: `none`,
+                  color: `inherit`,
+                }}
+                to={`/essays`}
+              >
+                Essays
+            </Link>
+            </li>
+            <li>
+                <Link
+                  className="navElement"
+                  style={{
+                    boxShadow: `none`,
+                    color: `inherit`,
+                    textAlign: `left`,
+                  }}
+                  to={`/book-club`}
+                >
+                  Book Club
+            </Link>
+            </li>
+          </ul>
+        </nav>
 
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          Essays
-        </Link>
+        
 
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          Book Club
-        </Link>
+        
+
+        
     </>
   )
 

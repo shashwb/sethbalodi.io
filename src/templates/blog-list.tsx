@@ -51,6 +51,9 @@ const BlogIndex = ({
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+
+
+      {/* this lists ALL posts */}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
