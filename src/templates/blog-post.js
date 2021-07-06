@@ -8,6 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+  console.log('>>     <BlogPostTemplate /> post', post);
   // const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 

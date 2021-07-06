@@ -67,6 +67,17 @@ const Layout = ({ location, title, children }) => {
           fontFamily: `Montserrat, sans-serif`,
         }}
       >
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h2>
+
         <Link
           style={{
             boxShadow: `none`,
@@ -74,9 +85,28 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          Top Threes
         </Link>
-      </h2>
+
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          Essays
+        </Link>
+
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          Book Club
+        </Link>
     </>
   )
 
