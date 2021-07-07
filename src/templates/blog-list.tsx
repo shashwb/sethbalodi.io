@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+/** css */
+import "../components/navbar.css";
+
 type PageContext = {
   currentPage: number
   numPages: number
@@ -52,6 +55,28 @@ const BlogIndex = ({
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
 
+      <div style={{display: "flex", justifyContent: "space-between" }} >
+        <h3>
+          Essays
+        </h3>
+        <h6 className="clickElement">
+          Read More
+        </h6>
+      </div>
+
+      <div style={{display: "flex", justifyContent: "space-between" }} >
+        <h3>Programming</h3>
+        <h6 className="clickElement">
+          Read More
+        </h6>
+      </div>
+
+      <div style={{display: "flex", justifyContent: "space-between" }} >
+        <h3>Projects</h3>
+        <h6 className="clickElement">
+          Learn More
+        </h6>
+      </div>
 
       {/* this lists ALL posts */}
       {posts.map(({ node }) => {
