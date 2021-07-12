@@ -74,6 +74,7 @@ li {
   /* text-transform: uppercase; */
   transition: color 0.1s, background-color 0.1s;
   color: #000;
+  cursor: pointer;
 }
 
 .clickElement:hover {

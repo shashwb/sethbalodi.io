@@ -122,12 +122,6 @@ const Layout = ({ location, title, children }) => {
             </li>
           </ul>
         </nav>
-
-        
-
-        
-
-        
     </>
   )
 
@@ -148,6 +142,7 @@ const Layout = ({ location, title, children }) => {
           {header}
         </div>
       </div>
+
 
       <div className="main-content relative">
         <main>{children}</main>
