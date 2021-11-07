@@ -145,9 +145,25 @@ const Layout = ({ location, title, children }) => {
               // to={`/test-blog`}
               to={`/all-essays-list`}
             >
-              Test Blog
+              All Essays
             </Link>
           </li>
+
+          {/* test names of blogs */}
+          {/* <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+                textAlign: `left`,
+              }}
+              // to={`/test-blog`}
+              to={`/test-blog`}
+            >
+              Test
+            </Link>
+          </li> */}
         </ul>
       </nav>
     </>

@@ -110,3 +110,15 @@ button {
     top: 0;
   }
 }
+
+/** new CSS **/
+
+/** blog category section **/
+.blog-category-section {
+  color: var(--textLink);
+}
+
+/** main "mixed" content holder offset from the title **/
+.breakdown-posts-container {
+  margin-left: '45px';
+}

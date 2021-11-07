@@ -8,11 +8,6 @@ import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
-  // console.group('>>     <BlogPostTemplate /> post', post);
-  // console.log('....general data', data);
-  // console.log('...general pageContext', pageContext);
-  console.groupEnd('');
-
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
@@ -31,6 +26,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
+
+          <h6
+            style={{
+              marginTop: '10px',
+              marginBottom: '10px',
+            }}
+          >
+            {post.frontmatter.categories.map((category) => {
+              return <div className="blog-category-section">{category}</div>;
+            })}
+          </h6>
           <p
             style={{
               ...scale(-1 / 5),
@@ -99,6 +105,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        categories
       }
     }
   }

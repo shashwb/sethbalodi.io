@@ -30,6 +30,8 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
+  console.log('(gatsby-node) result?', result);
+
   /** generate a "front page" content section */
 
   // const content = result.data.allMarkdownRemark.edges;
@@ -37,7 +39,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
-  console.log('posts', posts);
 
   /** create a new page for each blog post using the BlogPost component as a template */
   posts.forEach((post, index) => {
@@ -71,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
     path: `/all-essays-list`,
     component: path.resolve('./src/pages/all-essays-list.tsx'),
     context: {
-      limit: 3,
+      limit: 100,
       skip: 0,
       numPages: 1,
       currentPage: 1,
