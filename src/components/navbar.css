@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 @tailwind utilities;
 /* 
 body {
@@ -30,7 +30,8 @@ li {
 .navElement:hover {
   color: red;
 }
-.navElement:focus, .navElement:active {
+.navElement:focus,
+.navElement:active {
   color: red;
 }
 
@@ -43,9 +44,9 @@ li {
   width: 100%;
   background-color: red;
   -webkit-transform-origin: center top;
-          transform-origin: center top;
+  transform-origin: center top;
   -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
+  transform: scale(0, 1);
   transition: color 0.1s, -webkit-transform 0.2s ease-out;
   transition: color 0.1s, transform 0.2s ease-out;
   transition: color 0.1s, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
@@ -58,9 +59,9 @@ li {
 .navElement:hover::before,
 .navElement:focus::before {
   -webkit-transform-origin: center top;
-          transform-origin: center top;
+  transform-origin: center top;
   -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 /** clickable element **/
@@ -73,14 +74,15 @@ li {
   /* font-size: 1.2rem; */
   /* text-transform: uppercase; */
   transition: color 0.1s, background-color 0.1s;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
 }
 
 .clickElement:hover {
   color: red;
 }
-.clickElement:focus, .clickElement:active {
+.clickElement:focus,
+.clickElement:active {
   color: red;
 }
 
@@ -93,9 +95,9 @@ li {
   width: 100%;
   background-color: red;
   -webkit-transform-origin: center top;
-          transform-origin: center top;
+  transform-origin: center top;
   -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
+  transform: scale(0, 1);
   transition: color 0.1s, -webkit-transform 0.2s ease-out;
   transition: color 0.1s, transform 0.2s ease-out;
   transition: color 0.1s, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
@@ -108,7 +110,11 @@ li {
 .clickElement:hover::before,
 .clickElement:focus::before {
   -webkit-transform-origin: center top;
-          transform-origin: center top;
+  transform-origin: center top;
   -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.postsContainer {
+  margin-left: 30px;
 }

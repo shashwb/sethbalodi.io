@@ -1,8 +1,8 @@
 ---
 title: Syntax Highlighting Post
-date: "2020-07-27T07:26:03.284Z"
-description: "Demo post displaying the various ways of highlighting code in Markdown."
-categories: [code]
+date: '2020-07-27T07:26:03.284Z'
+description: 'Demo post displaying the various ways of highlighting code in Markdown.'
+categories: [programming]
 comments: true
 ---
 

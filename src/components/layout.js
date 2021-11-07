@@ -1,26 +1,26 @@
-import React from "react"
-import { Link } from "gatsby"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
-import { scale } from "../utils/typography"
+import React from 'react';
+import { Link } from 'gatsby';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import { scale } from '../utils/typography';
 
-import Footer from "./footer"
-import "./global.css"
-import "./navbar.css"
+import Footer from './footer';
+import './global.css';
+import './navbar.css';
 
 const Layout = ({ location, title, children }) => {
   const toggle = (
     <ThemeToggler>
       {({ toggleTheme, theme }) => {
-        const isDarkMode = theme === "dark"
+        const isDarkMode = theme === 'dark';
         if (theme == null) {
-          return null
+          return null;
         }
 
         return (
           <button
             aria-label="theme-switch"
             className="leading-none p-1"
-            onClick={() => toggleTheme(isDarkMode ? "light" : "dark")}
+            onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}
           >
             {isDarkMode ? (
               <svg
@@ -52,10 +52,10 @@ const Layout = ({ location, title, children }) => {
               </svg>
             )}
           </button>
-        )
+        );
       }}
     </ThemeToggler>
-  )
+  );
 
   const header = (
     <>
@@ -66,72 +66,100 @@ const Layout = ({ location, title, children }) => {
           marginBottom: 0,
           marginTop: 0,
           fontFamily: `Montserrat, sans-serif`,
-          marginBottom: "30px"
+          marginBottom: '30px',
         }}
       >
-          <Link
-            // className="navElement"
-            style={{
-              boxShadow: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h2>
+        <Link
+          // className="navElement"
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h2>
 
-        <nav>
-          <ul>
-            <li>
-              <Link
-                className="navElement"
-                style={{
-                  boxShadow: `none`,
-                  color: `inherit`,
-                }}
-                to={`/top-threes`}
-              >
-                Top Threes
-              </Link>
-            </li>
-            <li>
+      <nav>
+        <ul>
+          <li>
             <Link
-                className="navElement"
-                style={{
-                  boxShadow: `none`,
-                  color: `inherit`,
-                }}
-                to={`/essays`}
-              >
-                Essays
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+              }}
+              x
+              to={`/top-threes`}
+            >
+              Top Threes
             </Link>
-            </li>
-            <li>
-                <Link
-                  className="navElement"
-                  style={{
-                    boxShadow: `none`,
-                    color: `inherit`,
-                    textAlign: `left`,
-                  }}
-                  to={`/book-club`}
-                >
-                  Book Club
+          </li>
+          <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+              }}
+              to={`/content`}
+            >
+              Content
             </Link>
-            </li>
-          </ul>
-        </nav>
+          </li>
+          <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+                textAlign: `left`,
+              }}
+              to={`/book-club`}
+            >
+              Book Club
+            </Link>
+          </li>
+          {/* <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+                textAlign: `left`,
+              }}
+              to={`/`}
+            >
+              
+            </Link>
+          </li> */}
+          <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+                textAlign: `left`,
+              }}
+              // to={`/test-blog`}
+              to={`/all-essays-list`}
+            >
+              Test Blog
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </>
-  )
+  );
 
   return (
     <div
       style={{
-        backgroundColor: "var(--bg)",
-        color: "var(--textNormal)",
-        transition: "color 0.2s ease-out, background 0.2s ease-out",
-        minHeight: "100vh",
+        backgroundColor: 'var(--bg)',
+        color: 'var(--textNormal)',
+        transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        minHeight: '100vh',
       }}
     >
       <div className="sidebar">
@@ -143,13 +171,12 @@ const Layout = ({ location, title, children }) => {
         </div>
       </div>
 
-
       <div className="main-content relative">
         <main>{children}</main>
         <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

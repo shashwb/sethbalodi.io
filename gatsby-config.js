@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/leonids",
+  pathPrefix: '/leonids',
   siteMetadata: {
     title: `Seth Balodi`,
     author: {
@@ -7,11 +7,11 @@ module.exports = {
       summary: `Essays and Stories`,
     },
     description: `Personal website.`,
-    siteUrl: `https://renyuanz.github.io/leonids`,
+    siteUrl: `https://sethbalodi.io`,
     social: {
       twitter: `seth_balodi`,
     },
-    defaultImage: "images/bg.jpeg",
+    defaultImage: 'images/bg.jpeg',
   },
   plugins: [
     {
@@ -81,7 +81,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    "gatsby-plugin-dark-mode",
+    'gatsby-plugin-dark-mode',
     `gatsby-plugin-postcss`,
   ],
-}
+};

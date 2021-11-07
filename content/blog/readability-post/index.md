@@ -1,8 +1,8 @@
 ---
 title: 'Testing "Readability" with a Bunch of Text'
-date: "2020-07-27T07:26:03.284Z"
-description: "A ton of text to test readability."
-categories: [paragraph]
+date: '2020-07-27T07:26:03.284Z'
+description: 'A ton of text to test readability.'
+categories: [programming]
 comments: true
 ---
 
