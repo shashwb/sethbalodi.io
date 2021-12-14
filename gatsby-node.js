@@ -4,6 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
+  /** obtain a blog post template */
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
 
   /** retreive all post slugs and titles */
@@ -67,6 +68,37 @@ exports.createPages = async ({ graphql, actions }) => {
   /** create MixedContent, or Timeline page for holding Essays, Programming and Projects (for now) */
   /** create a Content page for holding Essays, Programming */
 
+
+
+  /** homepage holds all general content...
+   * > HOMEPAGE - section of essays / programming / projects
+   *      > read more -> CONTENT page
+   *          :: CONTENT page has the ability to be filtered in real time
+   *          :; you can filter between all the different categories
+   */
+  createPage({
+    path: `/`,
+    component: path.resolve('./src/pages/all-essays-list.tsx'),
+    context: {
+      limit: 100,
+      skip: 0,
+      numPages: 1,
+      currentPage: 1,
+    },
+  });
+
+  /** CONTENT PAGE */
+  createPage({
+    path: `/content`,
+    component: path.resolve('./src/pages/content.tsx'),
+    context: {
+      limit: 100,
+      skip: 0,
+      numPages: 1,
+      currentPage: 1,
+    },
+  });
+
   /** MIXEDCONTENTTIMELINE */
   createPage({
     path: `/all-essays-list`,
@@ -80,13 +112,13 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   /** CREATE A NEW HOMEPAGE */
-  createPage({
-    path: `/`,
-    component: path.resolve('./src/pages/homepage.tsx'),
-    context: {
-      testing: 'yoooo',
-    },
-  });
+  // createPage({
+  //   path: `/`,
+  //   component: path.resolve('./src/pages/homepage.tsx'),
+  //   context: {
+  //     testing: 'yoooo',
+  //   },
+  // });
   /** CREATE A NEW HOMEPAGE */
 
   /** Create a list of all blog posts */

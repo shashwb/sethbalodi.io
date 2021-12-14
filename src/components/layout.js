@@ -62,7 +62,7 @@ const Layout = ({ location, title, children }) => {
       {toggle}
       <h2
         style={{
-          ...scale(1),
+          ...scale(0.75),
           marginBottom: 0,
           marginTop: 0,
           fontFamily: `Montserrat, sans-serif`,
@@ -89,6 +89,20 @@ const Layout = ({ location, title, children }) => {
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
+                textAlign: `center`,
+              }}
+              // to={`/test-blog`}
+              to={`/content`}
+            >
+              Content
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
               }}
               x
               to={`/top-threes`}
@@ -102,68 +116,29 @@ const Layout = ({ location, title, children }) => {
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
-              }}
-              to={`/content`}
-            >
-              Content
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `left`,
+                textAlign: `center`,
               }}
               to={`/book-club`}
             >
               Book Club
             </Link>
           </li>
-          {/* <li>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `left`,
-              }}
-              to={`/`}
-            >
-              
-            </Link>
-          </li> */}
+
+          {/* test names of blogs */}
           <li>
             <Link
               className="navElement"
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
-                textAlign: `left`,
-              }}
-              // to={`/test-blog`}
-              to={`/all-essays-list`}
-            >
-              All Essays
-            </Link>
-          </li>
-
-          {/* test names of blogs */}
-          {/* <li>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `left`,
+                textAlign: `center`,
               }}
               // to={`/test-blog`}
               to={`/test-blog`}
             >
               Test
             </Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </>

@@ -44,6 +44,7 @@ const BlogIndex = ({ data, location, pageContext }: PageProps<Data, PageContext>
   // console.log('<BlogList /> :: what is data?', data);
   // console.log('<BlogList /> :: what is posts?', posts);
   // console.log('<BlogList /> :: PageContext', pageContext);
+  
 
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
@@ -54,6 +55,7 @@ const BlogIndex = ({ data, location, pageContext }: PageProps<Data, PageContext>
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <div>Testing (blog-list.tsx)</div>
+      <div>big test</div>
       {/* eventually, we can move this into it's own component */}
       <div className="sectionContainer">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
