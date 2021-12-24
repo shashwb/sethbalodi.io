@@ -103,6 +103,20 @@ const Layout = ({ location, title, children }) => {
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
+                textAlign: `center`,
+              }}
+              // to={`/test-blog`}
+              to={`/all-essays-list`}
+            >
+              Test Content
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="navElement"
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
               }}
               x
               to={`/top-threes`}
