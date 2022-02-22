@@ -5,6 +5,9 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
+/** helper functions */
+import { renderPostsByCategory } from '../utils/helper-functions';
+
 /** css */
 import '../components/navbar.css';
 
@@ -45,18 +48,27 @@ type Data = {
   };
 
 
+
+/** render posts  */
+
+
 /** IDEAS
  * >> maybe make this infinite scroll?
  */
 const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
-    console.log('All content holder, data', data, "location", location);
-    console.log('.....what is the pageContext?', pageContext);
     const siteTitle = "Seth Balodi";
+    const posts = data.allMarkdownRemark.edges;
+
+    /**
+     * TODO: Create a filtering component
+     */
+
+
     return (
         <Layout location={location} title={siteTitle}>
-            <SEO title="All Content" />
+            <SEO title="Archive" />
             <div>
-                CONTENT PAGE!
+                {renderPostsByCategory(posts, null, "Archive")}
             </div>
         </Layout>
     )

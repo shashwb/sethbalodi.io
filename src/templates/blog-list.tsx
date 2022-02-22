@@ -41,11 +41,6 @@ const BlogIndex = ({ data, location, pageContext }: PageProps<Data, PageContext>
   const posts = data.allMarkdownRemark.edges;
   const { currentPage, numPages } = pageContext;
 
-  // console.log('<BlogList /> :: what is data?', data);
-  // console.log('<BlogList /> :: what is posts?', posts);
-  // console.log('<BlogList /> :: PageContext', pageContext);
-  
-
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const prevPage = currentPage - 1 === 1 ? '/' : `/${currentPage - 1}`;

@@ -1,33 +1,54 @@
+// Gatsby supports TypeScript natively!
 import React from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
-/** stylesheets */
+/** helper functions */
+import { renderPostsByCategory } from "../utils/helper-functions";
+
+/** css */
 import '../components/navbar.css';
 
 type PageContext = {
-  // nothing for now...
+  currentPage: number;
+  numPages: number;
 };
-
 type Data = {
-  // will build eventually
+  site: {
+    siteMetadata: {
+      title: string;
+    };
+  };
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        excerpt: string;
+        frontmatter: {
+          title: string;
+          date: string;
+          description: string;
+        };
+        fields: {
+          slug: string;
+        };
+      };
+    }[];
+  };
 };
 
-const Homepage = ({ data, pageContext, location }: PageProps<Data, PageContext>) => {
+/** this renders the entire blog... */
+const Homepage = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
+  console.log('<Homepage />, data', data, 'location', location, 'pageContext', pageContext);
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
-  console.group();
-  console.log('<HomePage />, values');
-  console.log('...data', data);
-  console.log('...pageContext', pageContext);
-  console.groupEnd();
-
   return (
     <Layout location={location} title={siteTitle}>
-      <div>testing new homepage.tsx</div>
+      <SEO title="Homepage" />
+      {renderPostsByCategory(posts, "essay", "Essays")}
+      {renderPostsByCategory(posts, "programming")}
     </Layout>
   );
 };
@@ -35,13 +56,18 @@ const Homepage = ({ data, pageContext, location }: PageProps<Data, PageContext>)
 export default Homepage;
 
 export const pageQuery = graphql`
-  query homepageQuery {
+  query testQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { categories: { in: ["essay", "programming"] } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt
@@ -59,3 +85,38 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+
+/** old code for handling multiple pages */
+{/* relevant for multiple pages */}
+{/* const { currentPage, numPages } = pageContext;
+const isFirst = currentPage === 1;
+const isLast = currentPage === numPages;
+const prevPage = currentPage - 1 === 1 ? '/' : `/${currentPage - 1}`;
+const nextPage = `/${currentPage + 1}`;
+<nav>
+  <ul
+    style={{
+      display: `flex`,
+      flexWrap: `wrap`,
+      justifyContent: `space-between`,
+      listStyle: `none`,
+      padding: 0,
+    }}
+  >
+    <li>
+      {!isFirst && (
+        <Link to={prevPage} rel="prev">
+          ← Previous Page
+        </Link>
+      )}
+    </li>
+    <li>
+      {!isLast && (
+        <Link to={nextPage} rel="next">
+          Next Page →
+        </Link>
+      )}
+    </li>
+  </ul>
+</nav> */}

@@ -83,7 +83,7 @@ const Layout = ({ location, title, children }) => {
 
       <nav>
         <ul>
-          <li>
+          <li key={"archive"}>
             <Link
               className="navElement"
               style={{
@@ -92,12 +92,12 @@ const Layout = ({ location, title, children }) => {
                 textAlign: `center`,
               }}
               // to={`/test-blog`}
-              to={`/content`}
+              to={`/archive`}
             >
-              Content
+              Archive
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className="navElement"
               style={{
@@ -106,25 +106,24 @@ const Layout = ({ location, title, children }) => {
                 textAlign: `center`,
               }}
               // to={`/test-blog`}
-              to={`/all-essays-list`}
+              to={`/homepage`}
             >
               Test Content
             </Link>
-          </li>
-          <li>
+          </li> */}
+          <li key="top-threes">
             <Link
               className="navElement"
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
               }}
-              x
               to={`/top-threes`}
             >
               Top Threes
             </Link>
           </li>
-          <li>
+          <li key="book-club">
             <Link
               className="navElement"
               style={{

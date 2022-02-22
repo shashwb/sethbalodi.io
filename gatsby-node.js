@@ -31,13 +31,6 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  console.log('(gatsby-node) result?', result);
-
-  /** generate a "front page" content section */
-
-  // const content = result.data.allMarkdownRemark.edges;
-  // console.log('what is content?', content);
-
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
@@ -78,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
    */
   createPage({
     path: `/`,
-    component: path.resolve('./src/pages/all-essays-list.tsx'),
+    component: path.resolve('./src/pages/homepage.tsx'),
     context: {
       limit: 100,
       skip: 0,
@@ -89,8 +82,32 @@ exports.createPages = async ({ graphql, actions }) => {
 
   /** CONTENT PAGE */
   createPage({
-    path: `/content`,
-    component: path.resolve('./src/pages/content.tsx'),
+    path: `/archive`,
+    component: path.resolve('./src/pages/archive.tsx'),
+    context: {
+      limit: 100,
+      skip: 0,
+      numPages: 1,
+      currentPage: 1,
+    },
+  });
+
+  /** TOP THREES */
+  createPage({
+    path: `/top-threes`,
+    component: path.resolve('./src/pages/top-threes.tsx'),
+    context: {
+      limit: 100,
+      skip: 0,
+      numPages: 1,
+      currentPage: 1,
+    },
+  });
+
+  /** BOOK CLUB */
+  createPage({
+    path: `/book-club`,
+    component: path.resolve('./src/pages/book-club.tsx'),
     context: {
       limit: 100,
       skip: 0,
@@ -100,16 +117,16 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   /** MIXEDCONTENTTIMELINE */
-  createPage({
-    path: `/all-essays-list`,
-    component: path.resolve('./src/pages/all-essays-list.tsx'),
-    context: {
-      limit: 100,
-      skip: 0,
-      numPages: 1,
-      currentPage: 1,
-    },
-  });
+  // createPage({
+  //   path: `/all-essays-list`,
+  //   component: path.resolve('./src/pages/homepage_list.tsx'),
+  //   context: {
+  //     limit: 100,
+  //     skip: 0,
+  //     numPages: 1,
+  //     currentPage: 1,
+  //   },
+  // });
 
   /** CREATE A NEW HOMEPAGE */
   // createPage({
