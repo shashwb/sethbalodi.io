@@ -56,7 +56,7 @@ const Homepage = ({ data, location, pageContext }: PageProps<Data, PageContext>)
 export default Homepage;
 
 export const pageQuery = graphql`
-  query testQuery($skip: Int!, $limit: Int!) {
+  query testQuery {
     site {
       siteMetadata {
         title
@@ -65,8 +65,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: { frontmatter: { categories: { in: ["essay", "programming"] } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {
