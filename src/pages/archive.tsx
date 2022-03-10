@@ -80,7 +80,7 @@ export default AllContentIndex;
 /** make a GraphQL request for this page's data */
 
 export const pageQuery = graphql`
-query contentQuery($skip: Int!, $limit: Int!) {
+query contentQuery {
   site {
     siteMetadata {
       title
@@ -89,8 +89,6 @@ query contentQuery($skip: Int!, $limit: Int!) {
   allMarkdownRemark(
     filter: { frontmatter: { categories: { in: ["essay", "programming"] } } }
     sort: { fields: [frontmatter___date], order: DESC }
-    limit: $limit
-    skip: $skip
   ) {
     edges {
       node {
