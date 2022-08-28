@@ -2,14 +2,16 @@
 
 body {
   --bg: #fff;
-  /* --lightBg: #f5f5f5; */
-  --lightBg: #78b9f6;
+  --lightBg: #f5f5f5;
+  --lightBg: #15cbe3;
   --lightMain: #ebedf2;
   --textNormal: #181818;
-  --textTitle: #181818;
-  --textLink: #fd5e53;
+  --textLink: #519eae;
+  /* --textLink: #fd5e53; */
+  --subTitle: black;
   /* --textLink: #FFF799; */
   --hr: hsla(0, 20%, 1%, 0.2);
+  --mainTheme: #FFF799;
 
   background-color: var(--bg);
 }
@@ -21,7 +23,11 @@ body.dark {
   --lightBg: #0f0f0f;
   --textNormal: #e0e0e0;
   --textTitle: #fff;
-  --textLink: #ff6363;
+  /* --textLink: #ff6363; */
+  /* --textLink: #FFF799; */
+  --textLink: #15cbe3;
+  --subTitle: white;
+
   --hr: hsla(0, 0%, 100%, 0.2);
 }
 
@@ -43,6 +49,63 @@ h5,
 h6,
 blockquote {
   color: var(--textTitle);
+}
+
+h1 {
+  font-family: onyx;
+  font-size: 76px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: onyx;
+  font-size: 56px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.nirvana-font {
+  font-family: onyx;
+  font-size: 38px;
+  font-weight: normal;
+}
+
+.nirvana-font-sm {
+  font-family: onyx;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.nirvana-font-lg {
+  font-family: onyx;
+  font-size: 86px;
+  font-weight: normal;
+}
+
+.uppercase {
+  text-decoration: uppercase;
+}
+
+.blackText {
+  color: var(--subTitle);
+}
+
+.subtitle {
+  font-size: 18px;
+  margin: 0 30px;
+  /* text-align: left; */
+}
+
+.mainTitle {
+  text-shadow: 4px 2px steelblue;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: 'Onyx';
+  font-size: 110px;
+  font-weight: 'normal';
+  color: '#FFF799';
+  color: var(--mainTheme);
 }
 
 .footnotes {
@@ -130,6 +193,9 @@ button {
 .clickElement {
   text-decoration: none;
   position: relative;
+  /* font-family: onyx;
+  text-transform: uppercase;
+  font-size: 28px; */
   /* display: block; */
   /* padding: 16px 0; */
   /* margin: 0 12px; */

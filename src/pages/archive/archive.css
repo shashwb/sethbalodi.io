@@ -11,6 +11,7 @@
 }
 
 .filter-btn-element {
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 5px;
+    color: black;
 }

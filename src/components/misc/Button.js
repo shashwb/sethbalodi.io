@@ -9,7 +9,7 @@ const Button = ({ isSelected, value, clickHandler }) => {
           clickHandler(value);
         }}
       >
-        {isSelected ? `[${value}]` : value}
+        {isSelected ? <b>{`[${value}]`}</b> : value}
       </button>
     </div>
   );

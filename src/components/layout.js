@@ -60,19 +60,7 @@ const Layout = ({ location, title, children }) => {
   const header = (
     <>
       {toggle}
-      <h2
-        style={{
-          // ...scale(0.75),
-          marginBottom: 0,
-          marginTop: 0,
-          // fontFamily: `Montserrat, sans-serif`,
-          fontFamily: 'Onyx',
-          fontSize: 120,
-          fontWeight: 'normal',
-          color: '#FFF799',
-          // marginBottom: '30px',
-        }}
-      >
+      <h2 className="mainTitle">
         <Link
           // className="navElement"
           style={{
@@ -81,10 +69,13 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          SETH BALODI
+          {title.toUpperCase()}
         </Link>
       </h2>
-      <h3>Programming, Kurt Vonnegut and Gaming. That's pretty much it.</h3>
+      <h3 className="blackText subtitle">
+        Brooklyn based.
+        <br /> Writing, game dev and punk rock. That's pretty much it.
+      </h3>
 
       <nav>
         <ul>

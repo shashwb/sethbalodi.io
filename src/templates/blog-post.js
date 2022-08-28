@@ -20,6 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
         <header>
           <h1
+            className="nirvana-font-lg"
             style={{
               marginBottom: 0,
             }}

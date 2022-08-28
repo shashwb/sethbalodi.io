@@ -62,12 +62,17 @@ const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageCo
 
   const uniqueCategories = getValidCategories(posts);
 
-  const filterBy = `Filter by category: ${selectedCategory}`;
+  const filterBy = (
+    <div>
+      <span>Filter by category: </span>
+      <span>{`[${selectedCategory}]`}</span>
+    </div>
+  );
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Archive" />
-      <h3>Archive</h3>{' '}
+      <h3 className="nirvana-font-lg">Archive</h3>{' '}
       <CategoryFilter
         categories={uniqueCategories}
         handleChange={onHandle___selectedCategory}
