@@ -1,0 +1,9 @@
+.filter-btn-holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-btn-element {
+    font-weight: bold;
+    padding: 0 50px;
+}

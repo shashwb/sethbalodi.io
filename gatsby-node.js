@@ -61,8 +61,6 @@ exports.createPages = async ({ graphql, actions }) => {
   /** create MixedContent, or Timeline page for holding Essays, Programming and Projects (for now) */
   /** create a Content page for holding Essays, Programming */
 
-
-
   /** homepage holds all general content...
    * > HOMEPAGE - section of essays / programming / projects
    *      > read more -> CONTENT page
@@ -83,7 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
   /** CONTENT PAGE */
   createPage({
     path: `/archive`,
-    component: path.resolve('./src/pages/archive.tsx'),
+    component: path.resolve('./src/pages/archive'),
     context: {
       limit: 100,
       skip: 0,
@@ -144,26 +142,26 @@ exports.createPages = async ({ graphql, actions }) => {
 
   /** this creates any number of pages necessary to create a full blog list (this should be what is done for "list pages") */
   Array.from({ length: numPages }).forEach((_, i) => {
-    // createPage({
-    //   path: i === 0 ? `/` : `/${i + 1}`,
-    //   component: path.resolve('./src/templates/blog-list.tsx'),
-    //   context: {
-    //     limit: postsPerPage,
-    //     skip: i * postsPerPage,
-    //     numPages,
-    //     currentPage: i + 1,
-    //   },
-    // });
-    // createPage({
-    //   path: i === 0 ? `/` : `/${i + 1}`,
-    //   component: path.resolve('./src/pages/all-essays-list.tsx'),
-    //   context: {
-    //     limit: postsPerPage,
-    //     skip: i * postsPerPage,
-    //     numPages,
-    //     currentPage: i + 1,
-    //   },
-    // });
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: path.resolve('./src/templates/blog-list.tsx'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    });
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: path.resolve('./src/pages/all-essays-list.tsx'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    });
   });
 };
 

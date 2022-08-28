@@ -8,9 +8,7 @@ export const renderPostsByCategory = (collection = [], category = 'all', name = 
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       {
         <>
-          <h3>
-            {name != 'default' ? name : category.charAt(0).toUpperCase() + category.slice(1)}
-          </h3>
+          <h3>{name != 'default' ? name : category.charAt(0).toUpperCase() + category.slice(1)}</h3>
           <h6 className="clickElement">Read More</h6>
         </>
       }
@@ -20,7 +18,7 @@ export const renderPostsByCategory = (collection = [], category = 'all', name = 
   const POSTS = collection.map(({ node }) => {
     if (
       (node.frontmatter.categories && node.frontmatter.categories.includes(category)) ||
-      category === "all"
+      category === 'all'
     ) {
       const title = node.frontmatter.title || node.fields.slug;
       return (

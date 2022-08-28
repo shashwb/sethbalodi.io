@@ -1,0 +1,1 @@
+export { AllContentIndex } from './archive';

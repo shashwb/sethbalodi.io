@@ -1,24 +1,19 @@
-// Gatsby supports TypeScript natively!
 import React, { useEffect, useState } from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
+import Layout from '../../components/layout';
+import SEO from '../../components/seo';
 
-/** helper functions */
-import { renderPostsByCategory } from '../utils/helper-functions';
+/** components */
+import CategoryFilter from './CategoryFilter';
+
+/** utility helper functions */
+import { renderPostsByCategory } from '../../utils/helper-functions';
 
 /** css */
-import '../components/navbar.css';
+import '../../components/navbar.css';
+import './archive.css';
 
-/** THIS PAGE SHOULD RENDER ALL CONTENT
- * TODO:
- * > implement a tag selector at the top of the screen
- */
-
-/**
- * TODO: look up this typescript BS....
- */
+/** TODO: look up this typescript BS.... */
 type PageContext = {
   currentPage: number;
   numPages: number;
@@ -46,39 +41,11 @@ type Data = {
   };
 };
 
-/** render selection  */
-const CategoryFilter = ({ categories, handleChange, selected }) => {
-  return (
-    <div>
-      {categories.map((category) => (
-        <button
-          selected={selected}
-          value={category}
-          onClick={(e) => {
-            console.log('e', e);
-            console.log('cagegory', category);
-            handleChange(category);
-          }}
-        >
-          {category}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-/** IDEAS
- * >> maybe make this infinite scroll?
- */
 const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-
-  useEffect(() => {
-    console.log('selectedCategory changed!', selectedCategory);
-  }, [selectedCategory]);
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   /** helper functions */
-  const onHandle___selectedCategory = (category) => setSelectedCategory(category);
+  const onHandle___selectedCategory = (category: String) => setSelectedCategory(category);
 
   const siteTitle = 'Seth Balodi';
   const posts = data.allMarkdownRemark.edges;
@@ -87,25 +54,20 @@ const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageCo
     // get all the categories that exist across all posts
     const nonUniqueCategories = posts.map((post) =>
       post.node.frontmatter.categories
-        ? post.node.frontmatter.categories.map((cat) => cat.toLowerCase())
+        ? post.node.frontmatter.categories.map((cat: String) => cat.toLowerCase())
         : null
     );
-    return ["all", ...new Set([].concat(...nonUniqueCategories))]; //create unique categories
+    return ['all', ...new Set([].concat(...nonUniqueCategories))]; //create unique categories
   };
 
   const uniqueCategories = getValidCategories(posts);
-
-
-  /**
-   * TODO: Create a filtering component
-   */
 
   const filterBy = `Filter by category: ${selectedCategory}`;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Archive" />
-      <h3>Archive</h3>
+      <h3>Archive</h3>{' '}
       <CategoryFilter
         categories={uniqueCategories}
         handleChange={onHandle___selectedCategory}
