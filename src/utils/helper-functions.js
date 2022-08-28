@@ -3,13 +3,12 @@ import { Link } from 'gatsby';
 import { rhythm } from './typography';
 
 export const renderPostsByCategory = (collection = [], category = 'all', name = 'default') => {
-  console.log('((renderPostsByCateogry)) category', category);
   const HEADER = (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       {
         <>
           <h3>{name != 'default' ? name : category.charAt(0).toUpperCase() + category.slice(1)}</h3>
-          <h6 className="clickElement">Read More</h6>
+          {/* <h6 className="clickElement">Read More</h6> */}
         </>
       }
     </div>

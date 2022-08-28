@@ -62,11 +62,15 @@ const Layout = ({ location, title, children }) => {
       {toggle}
       <h2
         style={{
-          ...scale(0.75),
+          // ...scale(0.75),
           marginBottom: 0,
           marginTop: 0,
-          fontFamily: `Montserrat, sans-serif`,
-          marginBottom: '30px',
+          // fontFamily: `Montserrat, sans-serif`,
+          fontFamily: 'Onyx',
+          fontSize: 120,
+          fontWeight: 'normal',
+          color: '#FFF799',
+          // marginBottom: '30px',
         }}
       >
         <Link
@@ -77,13 +81,14 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          SETH BALODI
         </Link>
       </h2>
+      <h3>Programming, Kurt Vonnegut and Gaming. That's pretty much it.</h3>
 
       <nav>
         <ul>
-          <li key={"archive"}>
+          {/* <li key={'archive'}>
             <Link
               className="navElement"
               style={{
@@ -96,22 +101,8 @@ const Layout = ({ location, title, children }) => {
             >
               Archive
             </Link>
-          </li>
-          {/* <li>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `center`,
-              }}
-              // to={`/test-blog`}
-              to={`/homepage`}
-            >
-              Test Content
-            </Link>
           </li> */}
-          <li key="top-threes">
+          {/* <li key="top-threes">
             <Link
               className="navElement"
               style={{
@@ -135,10 +126,10 @@ const Layout = ({ location, title, children }) => {
             >
               Book Club
             </Link>
-          </li>
+          </li> */}
 
           {/* test names of blogs */}
-          <li>
+          {/* <li>
             <Link
               className="navElement"
               style={{
@@ -151,7 +142,7 @@ const Layout = ({ location, title, children }) => {
             >
               Test
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

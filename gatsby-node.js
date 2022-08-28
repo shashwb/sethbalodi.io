@@ -67,21 +67,22 @@ exports.createPages = async ({ graphql, actions }) => {
    *          :: CONTENT page has the ability to be filtered in real time
    *          :; you can filter between all the different categories
    */
-  createPage({
-    path: `/`,
-    component: path.resolve('./src/pages/homepage.tsx'),
-    context: {
-      limit: 100,
-      skip: 0,
-      numPages: 1,
-      currentPage: 1,
-    },
-  });
+  // createPage({
+  //   path: `/`,
+  //   component: path.resolve('./src/pages/homepage.tsx'),
+  //   context: {
+  //     limit: 100,
+  //     skip: 0,
+  //     numPages: 1,
+  //     currentPage: 1,
+  //   },
+  // });
 
   /** CONTENT PAGE */
   createPage({
-    path: `/archive`,
-    component: path.resolve('./src/pages/archive'),
+    // path: `/archive`,
+    path: `/`,
+    component: path.resolve('./src/pages/archive/archive.tsx'),
     context: {
       limit: 100,
       skip: 0,
@@ -90,29 +91,29 @@ exports.createPages = async ({ graphql, actions }) => {
     },
   });
 
-  /** TOP THREES */
-  createPage({
-    path: `/top-threes`,
-    component: path.resolve('./src/pages/top-threes.tsx'),
-    context: {
-      limit: 100,
-      skip: 0,
-      numPages: 1,
-      currentPage: 1,
-    },
-  });
+  // /** TOP THREES */
+  // createPage({
+  //   path: `/top-threes`,
+  //   component: path.resolve('./src/pages/top-threes.tsx'),
+  //   context: {
+  //     limit: 100,
+  //     skip: 0,
+  //     numPages: 1,
+  //     currentPage: 1,
+  //   },
+  // });
 
-  /** BOOK CLUB */
-  createPage({
-    path: `/book-club`,
-    component: path.resolve('./src/pages/book-club.tsx'),
-    context: {
-      limit: 100,
-      skip: 0,
-      numPages: 1,
-      currentPage: 1,
-    },
-  });
+  // /** BOOK CLUB */
+  // createPage({
+  //   path: `/book-club`,
+  //   component: path.resolve('./src/pages/book-club.tsx'),
+  //   context: {
+  //     limit: 100,
+  //     skip: 0,
+  //     numPages: 1,
+  //     currentPage: 1,
+  //   },
+  // });
 
   /** MIXEDCONTENTTIMELINE */
   // createPage({
@@ -142,26 +143,26 @@ exports.createPages = async ({ graphql, actions }) => {
 
   /** this creates any number of pages necessary to create a full blog list (this should be what is done for "list pages") */
   Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/` : `/${i + 1}`,
-      component: path.resolve('./src/templates/blog-list.tsx'),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    });
-    createPage({
-      path: i === 0 ? `/` : `/${i + 1}`,
-      component: path.resolve('./src/pages/all-essays-list.tsx'),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    });
+    // createPage({
+    //   path: i === 0 ? `/` : `/${i + 1}`,
+    //   component: path.resolve('./src/templates/blog-list.tsx'),
+    //   context: {
+    //     limit: postsPerPage,
+    //     skip: i * postsPerPage,
+    //     numPages,
+    //     currentPage: i + 1,
+    //   },
+    // });
+    // createPage({
+    //   path: i === 0 ? `/` : `/${i + 1}`,
+    //   component: path.resolve('./src/pages/all-essays-list.tsx'),
+    //   context: {
+    //     limit: postsPerPage,
+    //     skip: i * postsPerPage,
+    //     numPages,
+    //     currentPage: i + 1,
+    //   },
+    // });
   });
 };
 

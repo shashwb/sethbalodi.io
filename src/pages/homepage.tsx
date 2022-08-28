@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
 /** helper functions */
-import { renderPostsByCategory } from "../utils/helper-functions";
+import { renderPostsByCategory } from '../utils/helper-functions';
 
 /** css */
 import '../components/navbar.css';
@@ -40,15 +40,14 @@ type Data = {
 
 /** this renders the entire blog... */
 const Homepage = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
-  console.log('<Homepage />, data', data, 'location', location, 'pageContext', pageContext);
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Homepage" />
-      {renderPostsByCategory(posts, "essay", "Essays")}
-      {renderPostsByCategory(posts, "programming")}
+      {renderPostsByCategory(posts, 'essay', 'Essays')}
+      {renderPostsByCategory(posts, 'programming')}
     </Layout>
   );
 };
@@ -84,10 +83,12 @@ export const pageQuery = graphql`
   }
 `;
 
-
 /** old code for handling multiple pages */
-{/* relevant for multiple pages */}
-{/* const { currentPage, numPages } = pageContext;
+{
+  /* relevant for multiple pages */
+}
+{
+  /* const { currentPage, numPages } = pageContext;
 const isFirst = currentPage === 1;
 const isLast = currentPage === numPages;
 const prevPage = currentPage - 1 === 1 ? '/' : `/${currentPage - 1}`;
@@ -117,4 +118,5 @@ const nextPage = `/${currentPage + 1}`;
       )}
     </li>
   </ul>
-</nav> */}
+</nav> */
+}
