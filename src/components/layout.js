@@ -62,7 +62,6 @@ const Layout = ({ location, title, children }) => {
       {toggle}
       <h2 className="mainTitle">
         <Link
-          // className="navElement"
           style={{
             boxShadow: `none`,
             color: `inherit`,
