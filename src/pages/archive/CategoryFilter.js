@@ -6,9 +6,15 @@ const CategoryFilter = ({ categories, handleChange, selected }) => {
   return (
     <>
       <div className="filter-btn-holder">
-        {categories.map((category) => (
-          <Button isSelected={category === selected} value={category} clickHandler={handleChange} />
-        ))}
+        {categories && categories.length > 0
+          ? categories.map((category) => (
+              <Button
+                isSelected={category === selected}
+                value={category}
+                clickHandler={handleChange}
+              />
+            ))
+          : null}
       </div>
     </>
   );
