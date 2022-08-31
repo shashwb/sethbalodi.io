@@ -11,6 +11,7 @@ type PageContext = {
   currentPage: number;
   numPages: number;
 };
+
 type Data = {
   site: {
     siteMetadata: {
@@ -34,24 +35,22 @@ type Data = {
   };
 };
 
-const TopThrees = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
+const TopThreesOld = ({ data, location, pageContext }: PageProps<Data, PageContext>) => {
   const siteTitle = data.site.siteMetadata.title;
 
   /** TODO: eventually fetch the top threes using graphQL using the API */
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Top Threes" />
-      <div>
-          top threes?
-      </div>
+      <div>top threes?</div>
     </Layout>
   );
 };
 
-export default TopThrees;
+export default TopThreesOld;
 
 export const pageQuery = graphql`
-  query topThreesQuery {
+  query topThreesOldQuery {
     site {
       siteMetadata {
         title

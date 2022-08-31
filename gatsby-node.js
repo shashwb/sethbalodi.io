@@ -92,21 +92,23 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // /** TOP THREES */
-  // createPage({
-  //   path: `/top-threes`,
-  //   component: path.resolve('./src/pages/top-threes.tsx'),
-  //   context: {
-  //     limit: 100,
-  //     skip: 0,
-  //     numPages: 1,
-  //     currentPage: 1,
-  //   },
-  // });
+  createPage({
+    path: `/top-threes`,
+    component: path.resolve('./src/pages/top-threes/top-threes.js'),
+    context: {
+      limit: 100,
+      skip: 0,
+      numPages: 1,
+      currentPage: 1,
+    },
+  });
 
-  // /** BOOK CLUB */
+  /** BOOK (AND OTHER STUFF) CLUB */
+
+  /** BOOK CLUB */
   // createPage({
   //   path: `/book-club`,
-  //   component: path.resolve('./src/pages/book-club.tsx'),
+  //   component: path.resolve('./src/pages/lists/list_bookAndOtherStuffClub.js'),
   //   context: {
   //     limit: 100,
   //     skip: 0,

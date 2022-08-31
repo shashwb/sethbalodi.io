@@ -3,6 +3,9 @@ import { Link } from 'gatsby';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import { scale } from '../utils/typography';
 
+/** component */
+import Divider from './misc/Divider';
+
 import Footer from './footer';
 import './global.css';
 import './navbar.css';
@@ -71,9 +74,30 @@ const Layout = ({ location, title, children }) => {
           {title.toUpperCase()}
         </Link>
       </h2>
-      <h3 className="blackText subtitle">
+      <Divider height={'15px'} />
+      <h3 className="subtitle">
         Brooklyn based.
         <br /> Writing, game dev and punk rock. That's pretty much it.
+      </h3>
+      <Divider height={'50px'} />
+      <h3 className="subtitle">
+        Check out{' '}
+        <span>
+          <Link className="linkElement" to={`/`}>
+            Stuff I've Written
+          </Link>
+        </span>
+        ,{` `}
+        <span>
+          <Link className="linkElement" to={`/top-threes`}>
+            My Top Threes
+          </Link>{' '}
+          and{' '}
+          <Link className="linkElement" to={`/get-to-eventually`}>
+            My List of Things I'm Getting Around to Eventually
+          </Link>
+        </span>
+        .
       </h3>
 
       <nav>
@@ -87,12 +111,12 @@ const Layout = ({ location, title, children }) => {
                 textAlign: `center`,
               }}
               // to={`/test-blog`}
-              to={`/archive`}
+              to={`/`}
             >
               Archive
             </Link>
-          </li> */}
-          {/* <li key="top-threes">
+          </li>
+          <li key="top-threes">
             <Link
               className="navElement"
               style={{
