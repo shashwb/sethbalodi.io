@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/leonids',
   siteMetadata: {
-    title: `Seth Balodi`,
+    title: `the Technopessimist`,
     author: {
       name: `@seth_balodi`,
       summary: `Essays and Stories`,

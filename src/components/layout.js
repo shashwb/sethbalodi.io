@@ -63,7 +63,7 @@ const Layout = ({ location, title, children }) => {
   const header = (
     <>
       {toggle}
-      <h2 className="mainTitle">
+      <h2 className="holder-mainTitle">
         <Link
           style={{
             boxShadow: `none`,
@@ -71,35 +71,35 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title.toUpperCase()}
+          <div className="leadup-mainTitle">the</div>{' '}
+          <div className="mainTitle">Technopessimist</div>
         </Link>
       </h2>
       <Divider height={'15px'} />
       <h3 className="subtitle">
         Brooklyn based.
-        <br /> Writing, game dev and punk rock. That's pretty much it.
+        <br /> Writing, game dev and punk rock. Be wary of technology.
       </h3>
       <Divider height={'50px'} />
       <h3 className="subtitle">
         Check out{' '}
         <span>
           <Link className="linkElement" to={`/`}>
-            Stuff I've Written
+            Assorted Writings
           </Link>
         </span>
         ,{` `}
         <span>
           <Link className="linkElement" to={`/top-threes`}>
-            My Top Threes
+            Subjective Rankings
           </Link>{' '}
           and{' '}
           <Link className="linkElement" to={`/get-to-eventually`}>
-            My List of Things I'm Getting Around to Eventually
+            the "Reading" Club
           </Link>
         </span>
         .
       </h3>
-
       <nav>
         <ul>
           {/* <li key={'archive'}>

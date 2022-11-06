@@ -2,7 +2,7 @@
   "name": "technopessimist.dev",
   "private": true,
   "description": "A place for thoughts best expressed in digital form.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Seth Balodi <sethbalodi@gmail.com>",
   "dependencies": {
     "gatsby": "^2.24.47",

@@ -121,13 +121,29 @@ h2 {
 }
 
 
+.leadup-mainTitle {
+  /* to make the "the" in the title be closer to the .mainTitle text */
+  margin-bottom: -15px; 
+  font-size: 38px;
+  text-transform: lowercase;
+  text-shadow: 4px 2px steelblue;
+  font-family: Nirvana;
+  color: var(--mainTheme);
+  
+}
+
 .mainTitle {
   text-shadow: 4px 2px steelblue;
   margin-bottom: 0;
+  margin-top: 5;
   font-family: Nirvana;
-  font-size: 86px;
-  color: '#FFF799';
+  font-size: 78px;
   color: var(--mainTheme);
+}
+
+.holder-mainTitle {
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .footnotes {
