@@ -67,22 +67,28 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          <div className="leadup-mainTitle">the</div>{' '}
-          {['Tech', 'No', 'Pessi', 'Mist'].map((part) => {
-            return (
-              <div id={`title-${part}`} className={`mainTitle-alt`}>
-                {part}
-              </div>
-            );
-          })}
+          <div id="main-title-holder-small">
+            <div className="leadup-mainTitle">the</div>{' '}
+            <div className="mainTitle-small">Technopessimist</div>
+          </div>
+          <div id="main-title-holder-split">
+            <div className="leadup-mainTitle">the</div>{' '}
+            {['Tech', 'No', 'Pessi', 'Mist'].map((part) => {
+              return (
+                <div id={`title-${part}`} className={`mainTitle-alt`}>
+                  {part}
+                </div>
+              );
+            })}
+          </div>
         </Link>
       </h2>
-      <Divider height={'15px'} />
-      <h3 className="subtitle">
+      <Divider className="divider" height={'15px'} />
+      <h3 className="subtitle about">
         Brooklyn based.
         <br /> Writing, game dev and punk rock.
       </h3>
-      <Divider height={'50px'} />
+      <Divider className="divider" height={'50px'} />
       <h3 className="subtitle">
         Check out my{' '}
         <span>
@@ -90,77 +96,18 @@ const Layout = ({ location, title, children }) => {
             Assorted Writings
           </Link>
         </span>
-        ,{` `}
+        {` `}
+        and{` `}
         <span>
           <Link className="linkElement" to={`/top-threes`}>
             Very Objective Rankings
           </Link>{' '}
-          and{' '}
+          {/* and{' '}
           <Link className="linkElement" to={`/get-to-eventually`}>
             Illustrations
-          </Link>
+          </Link> */}
         </span>
-        .
       </h3>
-      <nav>
-        <ul>
-          {/* <li key={'archive'}>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `center`,
-              }}
-              // to={`/test-blog`}
-              to={`/`}
-            >
-              Archive
-            </Link>
-          </li>
-          <li key="top-threes">
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-              }}
-              to={`/top-threes`}
-            >
-              Top Threes
-            </Link>
-          </li>
-          <li key="book-club">
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `center`,
-              }}
-              to={`/book-club`}
-            >
-              Book Club
-            </Link>
-          </li> */}
-
-          {/* test names of blogs */}
-          {/* <li>
-            <Link
-              className="navElement"
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                textAlign: `center`,
-              }}
-              // to={`/test-blog`}
-              to={`/test-blog`}
-            >
-              Test
-            </Link>
-          </li> */}
-        </ul>
-      </nav>
     </>
   );
 
@@ -174,11 +121,7 @@ const Layout = ({ location, title, children }) => {
       }}
     >
       <div className="sidebar">
-        <div
-          // className="md:h-screen p-4 flex flex-col justify-center items-center"
-          className="md:h-screen p-4 flex flex-col"
-          style={{ minHeight: 200, width: '100%' }}
-        >
+        <div className="md:h-screen p-4 flex flex-col" style={{ minHeight: 200, width: '100%' }}>
           {header}
         </div>
       </div>

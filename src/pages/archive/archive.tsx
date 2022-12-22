@@ -72,7 +72,7 @@ const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageCo
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Archive" />
-      <h3 className="nirvana-font-md">Assorted Writings</h3>{' '}
+      <h3 className="nirvana-font-md section-title">Assorted Writings</h3>{' '}
       <CategoryFilter
         categories={uniqueCategories}
         handleChange={onHandle___selectedCategory}

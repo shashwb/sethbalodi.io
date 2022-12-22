@@ -118,11 +118,6 @@ h2 {
   color: var(--subTitle);
   color: whitesmoke;
   /* text-align: left; */
-  text-align: left;;
-}
-
-.theme-switch {
-  margin-top: 40px;
 }
 
 
@@ -155,8 +150,20 @@ h2 {
   color: var(--mainTheme);
   text-align: left;
   margin-bottom: -35px;
-  margin-left: 15px;
+  margin-left: 25px;
+}
 
+
+.mainTitle-small {
+  text-shadow: 4px 2px steelblue;
+  margin-bottom: 0;
+  margin-top: 5;
+  font-family: Nirvana;
+  font-size: 78px;
+  color: var(--mainTheme);
+  text-align: left;
+  margin-bottom: -85px;
+  margin-left: 0px;
 }
 
 .leadup-mainTitle {
@@ -168,7 +175,6 @@ h2 {
 .holder-mainTitle {
   width: "80%" !important;
   margin-top: 5px;
-  margin-left: 15px;;
 }
 
 .footnotes {
@@ -202,7 +208,6 @@ button {
   outline: 0;
 }
 .sidebar {
-  /* height: 200px; */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -226,18 +231,67 @@ button {
   margin-left: 0;
 }
 
+#main-title-holder-split {
+  display: none;
+  visibility: hidden;
+}
+
+.about {
+  display: none;
+}
+
+.mainTitle-small, .leadup-mainTitle {
+  text-align: center;
+}
+
+.section-title {
+  padding-top: 40px;
+}
+
+
+/** the non-screen break version **/
 @media only screen and (min-width: 768px) {
   .sidebar {
     height: 100vh;
     width: 330px;
   }
   .main-content {
-    padding: 0 100px 0;
+    padding: 0 80px 0;
     /* height: 100vh; */
     width: calc(100% - 330px);
     margin-left: 330px;
     top: 0;
   }
+  #main-title-holder-small {
+    visibility: hidden;
+    display: none;
+  }
+
+  #main-title-holder-split {
+    display: block;
+    visibility: visible;
+  } 
+
+  .about{
+    display: block;
+  }
+
+  .mainTitle-small, .leadup-mainTitle {
+    text-align: left;
+  }
+
+  .subtitle {
+    text-align: left;
+  }
+
+  .theme-switch {
+    margin-top: 40px;
+  }
+
+  .leadup-mainTitle {
+    margin-left: 27px;
+  }
+
 }
 
 /** new CSS **/
@@ -249,7 +303,7 @@ button {
 
 /** main "mixed" content holder offset from the title **/
 .breakdown-posts-container {
-  margin-left: '45px';
+  margin-left: 45px;
 }
 
 /** clickable elements **/
