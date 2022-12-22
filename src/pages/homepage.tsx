@@ -46,8 +46,10 @@ const Homepage = ({ data, location, pageContext }: PageProps<Data, PageContext>)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Homepage" />
+      <div>THIS IS A MAIN LAYOUT</div>
       {renderPostsByCategory(posts, 'essay', 'Essays')}
       {renderPostsByCategory(posts, 'programming')}
+      <div>testing</div>
     </Layout>
   );
 };

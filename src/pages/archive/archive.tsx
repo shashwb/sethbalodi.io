@@ -47,7 +47,7 @@ const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageCo
   /** helper functions */
   const onHandle___selectedCategory = (category: String) => setSelectedCategory(category);
 
-  const siteTitle = 'Seth Balodi';
+  const siteTitle = 'Technopessimist';
   const posts = data.allMarkdownRemark.edges;
 
   const getValidCategories = (posts) => {
@@ -72,7 +72,7 @@ const AllContentIndex = ({ data, location, pageContext }: PageProps<Data, PageCo
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Archive" />
-      <h3 className="nirvana-font-md">Stuff I've Written</h3>{' '}
+      <h3 className="nirvana-font-md">Assorted Writings</h3>{' '}
       <CategoryFilter
         categories={uniqueCategories}
         handleChange={onHandle___selectedCategory}

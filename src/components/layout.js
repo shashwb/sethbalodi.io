@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
-import { scale } from '../utils/typography';
-
-/** component */
 import Divider from './misc/Divider';
-
 import Footer from './footer';
 import './global.css';
 import './navbar.css';
@@ -22,7 +18,7 @@ const Layout = ({ location, title, children }) => {
         return (
           <button
             aria-label="theme-switch"
-            className="leading-none p-1"
+            className="leading-none p-1 theme-switch"
             onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}
           >
             {isDarkMode ? (
@@ -72,17 +68,23 @@ const Layout = ({ location, title, children }) => {
           to={`/`}
         >
           <div className="leadup-mainTitle">the</div>{' '}
-          <div className="mainTitle">Technopessimist</div>
+          {['Tech', 'No', 'Pessi', 'Mist'].map((part) => {
+            return (
+              <div id={`title-${part}`} className={`mainTitle-alt`}>
+                {part}
+              </div>
+            );
+          })}
         </Link>
       </h2>
       <Divider height={'15px'} />
       <h3 className="subtitle">
         Brooklyn based.
-        <br /> Writing, game dev and punk rock. Be wary of technology.
+        <br /> Writing, game dev and punk rock.
       </h3>
       <Divider height={'50px'} />
       <h3 className="subtitle">
-        Check out{' '}
+        Check out my{' '}
         <span>
           <Link className="linkElement" to={`/`}>
             Assorted Writings
@@ -91,11 +93,11 @@ const Layout = ({ location, title, children }) => {
         ,{` `}
         <span>
           <Link className="linkElement" to={`/top-threes`}>
-            Subjective Rankings
+            Very Objective Rankings
           </Link>{' '}
           and{' '}
           <Link className="linkElement" to={`/get-to-eventually`}>
-            the "Reading" Club
+            Illustrations
           </Link>
         </span>
         .
@@ -173,8 +175,9 @@ const Layout = ({ location, title, children }) => {
     >
       <div className="sidebar">
         <div
-          className="md:h-screen p-4 flex flex-col justify-center items-center"
-          style={{ minHeight: 200 }}
+          // className="md:h-screen p-4 flex flex-col justify-center items-center"
+          className="md:h-screen p-4 flex flex-col"
+          style={{ minHeight: 200, width: '100%' }}
         >
           {header}
         </div>

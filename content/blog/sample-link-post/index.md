@@ -2,7 +2,7 @@
 title: 'Sample Link Post'
 date: '2020-07-27T07:26:03.284Z'
 description: 'Try click on the link icon.'
-categories: [programming]
+categories: [sample]
 link: http://renyuanz.github.io
 share: true
 ---
